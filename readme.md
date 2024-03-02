@@ -20,6 +20,7 @@ Can be implemented to target systems and prompts very easily, below will be some
 
 data = {
             name = "Name", -- first part of name, bolded in the UI
+            
             name2 = "Name2", -- second part of name, not bolded
             dialog = "Text Here", -- main dialog text here, will appear under the name
             options = {
