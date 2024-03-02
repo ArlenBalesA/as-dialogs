@@ -34,7 +34,7 @@ data = {
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
+        exports["as-dialogs"]:DisplayDialog(data)
 ```
 The following is an example to use in one of your client files to trigger the interaction menu with prompt (using rsg-banking as an example)
 ```
@@ -59,7 +59,7 @@ AddEventHandler("rsg-banking:client:Interact", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
+        exports["as-dialogs"]:DisplayDialog(data)
 end)
 ```
 To trigger a second dialog box with more options, simply change the event type to update and trigger another event like below:
@@ -78,7 +78,7 @@ AddEventHandler("rsg-banking:client:Interact", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
+        exports["as-dialogs"]:DisplayDialog(data)
 end)
 ```
 And the event being triggered
@@ -97,7 +97,7 @@ AddEventHandler("rsg-banking:teller", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
+        exports["as-dialogs"]:DisplayDialog(data)
 end)
 ```
 To use with a target system, the change is simply. Inside of the target export, simply trigger the interact event like below:
@@ -133,7 +133,7 @@ AddEventHandler("Interact:Stranger", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data)
+    exports["as-dialogs"]:DisplayDialog(data)
 end)
 ```
 2nd part of interaction
@@ -153,7 +153,7 @@ AddEventHandler("Interact:Stranger2", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data2)
+    exports["as-dialogs"]:DisplayDialog(data2)
 end)
 ```
 3rd part of interaction
@@ -172,7 +172,7 @@ AddEventHandler("Interact:Stranger3", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data2)
+    exports["as-dialogs"]:DisplayDialog(data2)
 end)
 ```
 4th part of interaction
@@ -191,6 +191,6 @@ AddEventHandler("Interact:Stranger4", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data2)
+    exports["as-dialogs"]:DisplayDialog(data2)
 end)
 ```
