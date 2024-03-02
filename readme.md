@@ -17,10 +17,9 @@ Can be implemented to target systems and prompts very easily, below will be some
 
 # Usage Example
 - The following is the data that you can pass to the dialog script. Below I will show you how to implement it.
-
+```
 data = {
             name = "Name", -- first part of name, bolded in the UI
-            
             name2 = "Name2", -- second part of name, not bolded
             dialog = "Text Here", -- main dialog text here, will appear under the name
             options = {
@@ -33,16 +32,16 @@ data = {
             camRotation = vector3(rotX, rotY, rotZ),
         }
         exports["as-dialog"]:DisplayDialog(data)
-
+```
 # The following is an example to use in one of your client files to trigger the interaction menu with prompt (using rsg-banking as an example)
-
+```
 exports['rsg-core']:createPrompt(v.id, v.coords, RSGCore.Shared.Keybinds[Config.Keybind], 'Open '..v.name, {
             type = 'client',
             event = 'rsg-banking:client:Interact', -- this is from rsg-banking and will trigger another client event called 'rsg-banking:client:Interact'
         })
-
+```
 # Below is the event handler to add into the same client
-
+```
 AddEventHandler("rsg-banking:client:Interact", function()
         data = {
             name = "Saint Denis",
@@ -59,9 +58,9 @@ AddEventHandler("rsg-banking:client:Interact", function()
         }
         exports["as-dialog"]:DisplayDialog(data)
 end)
-
+```
 # To trigger a second dialog box with more options, simply change the event type to update and trigger another event like below:
-
+```
 AddEventHandler("rsg-banking:client:Interact", function()
         data = {
             name = "Saint Denis",
@@ -78,9 +77,9 @@ AddEventHandler("rsg-banking:client:Interact", function()
         }
         exports["as-dialog"]:DisplayDialog(data)
 end)
-
+```
 # And the event being triggered
-
+```
 AddEventHandler("rsg-banking:teller", function()
         data = {
             name = "Saint Denis",
@@ -97,9 +96,9 @@ AddEventHandler("rsg-banking:teller", function()
         }
         exports["as-dialog"]:DisplayDialog(data)
 end)
-
+```
 # To use with a target system, the change is simply. Inside of the target export, simply trigger the interact event like below:
-
+```
 exports['rsg-target']:AddCircleZone("horseheist", vector3(2644.579, -1283.313, 52.24956), 1, {
     name = "Stranger",
     debugPoly = false,
@@ -114,9 +113,9 @@ exports['rsg-target']:AddCircleZone("horseheist", vector3(2644.579, -1283.313, 5
     },
     distance = 4.0,
 })
-
+```
 # And the events being triggered
-
+```
 AddEventHandler("Interact:Stranger", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
@@ -133,9 +132,9 @@ AddEventHandler("Interact:Stranger", function()
     }
     exports["as-dialog"]:DisplayDialog(data)
 end)
-
+```
 # 2nd part of interaction
-
+```
 AddEventHandler("Interact:Stranger2", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
@@ -153,9 +152,9 @@ AddEventHandler("Interact:Stranger2", function()
     }
     exports["as-dialog"]:DisplayDialog(data2)
 end)
-
+```
 # 3rd part of interaction
-
+```
 AddEventHandler("Interact:Stranger3", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
@@ -172,9 +171,9 @@ AddEventHandler("Interact:Stranger3", function()
     }
     exports["as-dialog"]:DisplayDialog(data2)
 end)
-
+```
 # 4th part of interaction
-
+```
 AddEventHandler("Interact:Stranger4", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
@@ -191,3 +190,4 @@ AddEventHandler("Interact:Stranger4", function()
     }
     exports["as-dialog"]:DisplayDialog(data2)
 end)
+```
