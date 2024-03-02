@@ -48,7 +48,7 @@ Below is the event handler to add into the same client
 AddEventHandler("rsg-banking:client:Interact", function()
         data = {
             name = "Saint Denis",
-            surname = "Bank",
+            name2 = "Bank",
             dialog = "What can I help you with?",
             options = {
                 { "Talk To Teller", "event", "client" },
@@ -67,7 +67,7 @@ To trigger a second dialog box with more options, simply change the event type t
 AddEventHandler("rsg-banking:client:Interact", function()
         data = {
             name = "Saint Denis",
-            surname = "Bank",
+            name2 = "Bank",
             dialog = "What can I help you with?",
             options = {
                 { "Talk To Teller", "rsg-banking:teller", "update" },
@@ -86,7 +86,7 @@ And the event being triggered
 AddEventHandler("rsg-banking:teller", function()
         data = {
             name = "Saint Denis",
-            surname = "Bank",
+            name2 = "Bank",
             dialog = "What can I help you with?",
             options = {
                 { "Bla bla bla", "event", "client" },
@@ -124,7 +124,7 @@ AddEventHandler("Interact:Stranger", function()
     local pcoords = GetEntityCoords(playerPed)
     data = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "Shh. Keep it down. I've got something lined up and maybe just maybe, we can help each other.",
         options = {
             { "Tell me more...", "Interact:Stranger2", "update" },
@@ -143,7 +143,7 @@ AddEventHandler("Interact:Stranger2", function()
     local pcoords = GetEntityCoords(playerPed)
     data2 = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "This bastard wronged the wrong bastard and I want payback. I know the secret location of his prized and VERY expensive horse. You take his horse, sell it, keep the money and I get my revenge.",
         options = {
             { "Okay, I'm interested.", "Interact:Stranger3", "update" },
@@ -163,7 +163,7 @@ AddEventHandler("Interact:Stranger3", function()
     local pcoords = GetEntityCoords(playerPed)
     data2 = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "I have a feeling this is going to be an amazing partnership. Hand over your map and I'll mark the location that the horse is being kept. Keep in mind, there may be guards. Be ready to fight.",
         options = {
             { "*hand over map*", "Interact:Stranger3", "update" },
@@ -182,7 +182,7 @@ AddEventHandler("Interact:Stranger4", function()
     local pcoords = GetEntityCoords(playerPed)
     data2 = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "Very expensive, life changing expensive. So are you in or out?.",
         options = {
             { "I'm in.", "Interact:Stranger3", "update" },
