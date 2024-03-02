@@ -1,0 +1,150 @@
+@font-face {
+	font-family: 'Raleway-Regular';
+	src: url(fonts/Raleway-Regular.ttf)
+}
+
+*,*:focus,*:hover{
+	outline:none;
+}
+
+body {
+	font-family: 'Raleway-Regular';
+	user-select: none;
+	background: transparent;
+	display: none;
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(transparent, rgba(34, 35, 51, 1));
+}
+
+.dialog-blank {
+	position: absolute;
+	width: 580px;
+    min-height: 200px;
+    height: auto !important;
+	left: 50%;
+	bottom: 50px;
+	padding-top: 15px;
+	transform: translate(-50%, 0);
+	background-color: #121212;
+	box-shadow: inset 50px 50px 100px rgba(42, 42, 42, 0.4);
+	border: 0.25px solid rgba(113, 1, 1, 0.9);
+	border-radius: 15px;
+}
+
+.npc-name {
+	position: relative;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 300;
+	padding-top: 2%;
+	padding-bottom: 1%;
+	left: 4.5%;
+}
+
+.npc-second-name {
+	position: relative;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 300;
+	padding-top: 2%;
+	padding-bottom: 1%;
+	left: 4.5%;
+	margin-right: 4vh;
+}
+
+.npc-profession {
+	position: fixed;
+	color: #00f8b9;
+	font-size: 13px;
+	font-weight: 700;
+	background-color: rgba(46, 129, 108, 0.9);
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 1.5%;
+}
+
+.npc-rep {
+	position: fixed;
+	color: #00f8b9;
+	font-size: 13px;
+	font-weight: 700;
+	background-color: rgba(46, 129, 108, 0.9);
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 1.5%;
+	right: 4.3%;
+}
+
+.dialogbox {
+	position: relative;
+	background-color: #3b3b3b;
+	color: #fff;
+	text-shadow: 1px 1px 15px black;
+	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
+	width: 530px;
+	left: 4.3%;
+	font-size: 13px;
+	font-weight: 500;
+	text-align: left;
+	padding: 12px;
+	border-radius: 10px;
+}
+
+.btn-settings {
+	padding-top: 2%;
+	padding-bottom: 3%;
+}
+
+.btn-normal {
+	position: relative;
+	margin: 5px 15px;
+	left: 3.8%;
+	height: 35px;
+	width: 250px;
+	background-color: rgba(255, 255, 255, 0.3);
+	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
+	border: none;
+	color: #fff;
+	border-radius: 8px;
+}
+
+.btn-normal:hover {
+	transition: 200ms;
+	transform: scale(1.15);
+	background-color: rgba(215, 215, 215, 0.3);
+	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
+	color: #fff;
+}
+
+.digit-box{
+	position: relative;
+	width: 25px;
+	height: 25px;
+	right: 3%;
+	text-align: center;
+	background-color: rgba(113, 1, 1, 0.9);
+	border-radius: 4px;
+}
+
+.button-text {
+	position: absolute;
+	width: 200px;
+	height: 40px;
+	color: #fff;
+	text-decoration: none;
+	text-align: left;
+	left: 14.5%;
+	top: 20%;
+}
+
+.button-id {
+	color: #fff;
+}
