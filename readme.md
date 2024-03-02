@@ -10,10 +10,11 @@ to interact with NPC's, players, locations such as banks, stores etc.
 Can be implemented to target systems and prompts very easily, below will be some examples for you to follow and to copy/paste.
 
 # Dependancies
-- none/standalone
+- None
+- This is completely standalone, the examples are just using RSG as an example.
 
 # Installation
-- drag and drop into your resources, make sure it is started
+- Drag and drop into your resources, make sure it is started
 
 # Usage Example
 - The following is the data that you can pass to the dialog script. Below I will show you how to implement it.
