@@ -9,6 +9,8 @@ to interact with NPC's, players, locations such as banks, stores etc.
 
 Can be implemented to target systems and prompts very easily, below will be some examples for you to follow and to copy/paste.
 
+No-Pixel inspired-ish.
+
 # Dependancies
 - None
 - This is completely standalone, the examples are just using RSG as an example.
