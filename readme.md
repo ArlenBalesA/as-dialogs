@@ -9,15 +9,18 @@ to interact with NPC's, players, locations such as banks, stores etc.
 
 Can be implemented to target systems and prompts very easily, below will be some examples for you to follow and to copy/paste.
 
+No-Pixel inspired-ish.
+
 # Dependancies
-- none/standalone
+- None
+- This is completely standalone, the examples are just using RSG as an example.
 
 # Installation
-- drag and drop into your resources, make sure it is started
+- Drag and drop into your resources, make sure it is started
 
 # Usage Example
 - The following is the data that you can pass to the dialog script. Below I will show you how to implement it.
-
+```
 data = {
             name = "Name", -- first part of name, bolded in the UI
             name2 = "Name2", -- second part of name, not bolded
@@ -31,21 +34,21 @@ data = {
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
-
-# The following is an example to use in one of your client files to trigger the interaction menu with prompt (using rsg-banking as an example)
-
+        exports["as-dialogs"]:DisplayDialog(data)
+```
+The following is an example to use in one of your client files to trigger the interaction menu with prompt (using rsg-banking as an example)
+```
 exports['rsg-core']:createPrompt(v.id, v.coords, RSGCore.Shared.Keybinds[Config.Keybind], 'Open '..v.name, {
             type = 'client',
             event = 'rsg-banking:client:Interact', -- this is from rsg-banking and will trigger another client event called 'rsg-banking:client:Interact'
         })
-
-# Below is the event handler to add into the same client
-
+```
+Below is the event handler to add into the same client
+```
 AddEventHandler("rsg-banking:client:Interact", function()
         data = {
             name = "Saint Denis",
-            surname = "Bank",
+            name2 = "Bank",
             dialog = "What can I help you with?",
             options = {
                 { "Talk To Teller", "event", "client" },
@@ -56,15 +59,15 @@ AddEventHandler("rsg-banking:client:Interact", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
+        exports["as-dialogs"]:DisplayDialog(data)
 end)
-
-# To trigger a second dialog box with more options, simply change the event type to update and trigger another event like below:
-
+```
+To trigger a second dialog box with more options, simply change the event type to update and trigger another event like below:
+```
 AddEventHandler("rsg-banking:client:Interact", function()
         data = {
             name = "Saint Denis",
-            surname = "Bank",
+            name2 = "Bank",
             dialog = "What can I help you with?",
             options = {
                 { "Talk To Teller", "rsg-banking:teller", "update" },
@@ -75,15 +78,15 @@ AddEventHandler("rsg-banking:client:Interact", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
+        exports["as-dialogs"]:DisplayDialog(data)
 end)
-
-# And the event being triggered
-
+```
+And the event being triggered
+```
 AddEventHandler("rsg-banking:teller", function()
         data = {
             name = "Saint Denis",
-            surname = "Bank",
+            name2 = "Bank",
             dialog = "What can I help you with?",
             options = {
                 { "Bla bla bla", "event", "client" },
@@ -94,11 +97,11 @@ AddEventHandler("rsg-banking:teller", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
         }
-        exports["as-dialog"]:DisplayDialog(data)
+        exports["as-dialogs"]:DisplayDialog(data)
 end)
-
-# To use with a target system, the change is simply. Inside of the target export, simply trigger the interact event like below:
-
+```
+To use with a target system, the change is simply. Inside of the target export, simply trigger the interact event like below:
+```
 exports['rsg-target']:AddCircleZone("horseheist", vector3(2644.579, -1283.313, 52.24956), 1, {
     name = "Stranger",
     debugPoly = false,
@@ -113,15 +116,15 @@ exports['rsg-target']:AddCircleZone("horseheist", vector3(2644.579, -1283.313, 5
     },
     distance = 4.0,
 })
-
-# And the events being triggered
-
+```
+And the events being triggered
+```
 AddEventHandler("Interact:Stranger", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
     data = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "Shh. Keep it down. I've got something lined up and maybe just maybe, we can help each other.",
         options = {
             { "Tell me more...", "Interact:Stranger2", "update" },
@@ -130,17 +133,17 @@ AddEventHandler("Interact:Stranger", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data)
+    exports["as-dialogs"]:DisplayDialog(data)
 end)
-
-# 2nd part of interaction
-
+```
+2nd part of interaction
+```
 AddEventHandler("Interact:Stranger2", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
     data2 = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "This bastard wronged the wrong bastard and I want payback. I know the secret location of his prized and VERY expensive horse. You take his horse, sell it, keep the money and I get my revenge.",
         options = {
             { "Okay, I'm interested.", "Interact:Stranger3", "update" },
@@ -150,17 +153,17 @@ AddEventHandler("Interact:Stranger2", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data2)
+    exports["as-dialogs"]:DisplayDialog(data2)
 end)
-
-# 3rd part of interaction
-
+```
+3rd part of interaction
+```
 AddEventHandler("Interact:Stranger3", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
     data2 = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "I have a feeling this is going to be an amazing partnership. Hand over your map and I'll mark the location that the horse is being kept. Keep in mind, there may be guards. Be ready to fight.",
         options = {
             { "*hand over map*", "Interact:Stranger3", "update" },
@@ -169,17 +172,17 @@ AddEventHandler("Interact:Stranger3", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data2)
+    exports["as-dialogs"]:DisplayDialog(data2)
 end)
-
-# 4th part of interaction
-
+```
+4th part of interaction
+```
 AddEventHandler("Interact:Stranger4", function()
     local playerPed = PlayerPedId()
     local pcoords = GetEntityCoords(playerPed)
     data2 = {
         name = "Mysterious",
-        surname = "Stranger",
+        name2 = "Stranger",
         dialog = "Very expensive, life changing expensive. So are you in or out?.",
         options = {
             { "I'm in.", "Interact:Stranger3", "update" },
@@ -188,5 +191,6 @@ AddEventHandler("Interact:Stranger4", function()
             camCoords = vector3(x, y, z),
             camRotation = vector3(rotX, rotY, rotZ),
     }
-    exports["as-dialog"]:DisplayDialog(data2)
+    exports["as-dialogs"]:DisplayDialog(data2)
 end)
+```

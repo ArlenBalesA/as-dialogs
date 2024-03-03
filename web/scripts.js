@@ -1,5 +1,8 @@
 var options = undefined;
 var hasCreatedButtons = false;
+var theme = 'rdr' //normal or rdr - rdr uses a more red dead look
+
+
 
 window.addEventListener('message', function(event) {
 	item = event.data;
@@ -20,7 +23,7 @@ window.addEventListener('message', function(event) {
 					$("#option"+i).html(item.options[i][0]);
 					if(!hasCreatedButtons){
 						$(document).on('click', "#option"+i, function() {
-							$.post('https://as-dialog/action', JSON.stringify ({
+							$.post('https://as-dialogs/action', JSON.stringify ({
 								action: "option",
 								options: options[i],
 							}));
@@ -53,7 +56,7 @@ window.addEventListener('message', function(event) {
 					$("#option"+i).html(item.options[i][0]);
 					if(!hasCreatedButtons){
 						$(document).on('click', "#option"+i, function() {
-							$.post('https://as-dialog/action', JSON.stringify ({
+							$.post('https://as-dialogs/action', JSON.stringify ({
 								action: "option",
 								options: options[i],
 							}));
