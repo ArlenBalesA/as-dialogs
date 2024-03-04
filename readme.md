@@ -20,8 +20,7 @@ No-Pixel inspired-ish.
 - This is completely standalone, the examples are just using RSG as an example.
 
 # Installation
-- RSG: Drag and drop into your resources, make sure it is started
-- QBR: Rename RSGCore declarations to QBR and rsg-core calls to qbr-core
+- Drag and drop into your resources, make sure it is started
 
 # Usage Example
 - The following is the data that you can pass to the dialog script. Below I will show you how to implement it.
