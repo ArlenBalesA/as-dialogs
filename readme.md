@@ -11,6 +11,10 @@ Can be implemented to target systems and prompts very easily, below will be some
 
 No-Pixel inspired-ish.
 
+# Previews
+- Streamable: https://streamable.com/wq7vqq
+- 2.0 UPDATE PREVIEW: https://i.imgur.com/3ZcxD4Q.png
+
 # Dependancies
 - None
 - This is completely standalone, the examples are just using RSG as an example.

@@ -3,12 +3,24 @@
 	src: url(fonts/Raleway-Regular.ttf)
 }
 
+@font-face {
+	font-family: crock;
+	src: url('fonts/crock.ttf');
+}
+
+@font-face {
+	font-family: HapnaSlabSerif-Medium;
+	src: url('fonts/HapnaSlabSerif-Medium.ttf');
+}
+
+  
 *,*:focus,*:hover{
 	outline:none;
 }
 
 body {
-	font-family: 'Raleway-Regular';
+	text-transform: uppercase;
+	  font-family: "crock", HapnaSlabSerif-Medium, serif;
 	user-select: none;
 	background: transparent;
 	display: none;
@@ -22,37 +34,42 @@ body {
 
 .dialog-blank {
 	position: absolute;
-	width: 580px;
-    min-height: 200px;
+	width: 610px;
+    min-height: 215px;
     height: auto !important;
 	left: 50%;
 	bottom: 50px;
 	padding-top: 15px;
 	transform: translate(-50%, 0);
-	background-color: #121212;
-	box-shadow: inset 50px 50px 100px rgba(42, 42, 42, 0.4);
-	border: 0.25px solid rgba(113, 1, 1, 0.9);
-	border-radius: 15px;
+	position: absolute;
+	background-image: url(dialogbg.png);
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-size: 100% 100%;
 }
 
 .npc-name {
 	position: relative;
-	color: #fff;
+	color: #dfdfdf;
+	text-shadow: 0 1px 1px #6b6b6b, 
+      -4px 3px 1px #6b6b6b; 
 	font-size: 30px;
 	font-weight: 300;
-	padding-top: 2%;
-	padding-bottom: 1%;
-	left: 4.5%;
+	padding-top: 0%;
+	padding-bottom: 2%;
+	left: 5.5%;
 }
 
 .npc-second-name {
 	position: relative;
-	color: #fff;
+	color: #7e1921;
+	text-shadow: 0 1px 1px #121212, 
+      -4px 3px 1px #181818; 
 	font-size: 30px;
-	font-weight: 300;
-	padding-top: 2%;
+	font-weight: 200;
+	padding-top: 0%;
 	padding-bottom: 1%;
-	left: 4.5%;
+	left: 6%;
 	margin-right: 4vh;
 }
 
@@ -85,21 +102,23 @@ body {
 
 .dialogbox {
 	position: relative;
-	background-color: #3b3b3b;
 	color: #fff;
-	text-shadow: 1px 1px 15px black;
-	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
+	background-image: url(selection_box_bg_1d.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
 	width: 530px;
-	left: 4.3%;
-	font-size: 13px;
-	font-weight: 500;
+	top: 3.2%;
+	left: 4.4%;
+	font-size: 14px;
+	font-weight: 300;
 	text-align: left;
 	padding: 12px;
 	border-radius: 10px;
 }
 
 .btn-settings {
-	padding-top: 2%;
+	padding-top: 0.8%;
 	padding-bottom: 3%;
 }
 
@@ -109,18 +128,18 @@ body {
 	left: 3.8%;
 	height: 35px;
 	width: 250px;
-	background-color: rgba(255, 255, 255, 0.3);
-	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
+	background-image: url(selection_box_bg_1d.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
 	border: none;
 	color: #fff;
 	border-radius: 8px;
 }
 
 .btn-normal:hover {
-	transition: 200ms;
-	transform: scale(1.15);
-	background-color: rgba(215, 215, 215, 0.3);
-	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
+	transition: 600ms;
+	transform: scale(1.18);
 	color: #fff;
 }
 
@@ -128,10 +147,13 @@ body {
 	position: relative;
 	width: 25px;
 	height: 25px;
-	right: 3%;
+	top: 1%;
+	right: 4.5%;
 	text-align: center;
-	background-color: rgba(113, 1, 1, 0.9);
-	border-radius: 4px;
+	background-image: url(selection_box_square.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
 }
 
 .button-text {
@@ -141,8 +163,8 @@ body {
 	color: #fff;
 	text-decoration: none;
 	text-align: left;
-	left: 14.5%;
-	top: 20%;
+	left: 13.5%;
+	top: 17.5%;
 }
 
 .button-id {
